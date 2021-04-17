@@ -1,3 +1,5 @@
+
+
 import PropTypes from 'prop-types';
 import React from 'react';
 import { unstable_concurrentAct } from 'react-dom/test-utils';
@@ -24,3 +26,11 @@ class App extends React.Component{
 }
 
 export default App;
+
+//class에는 render()말고도 몇가지 함수가 있다.
+//component가 생성되거나 지워지거나 업데이트될때마다 실행되는 함수들 몇가지.
+/*
+Mouning
+Updating
+Unmounting
+*/
