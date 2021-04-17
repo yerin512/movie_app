@@ -1,22 +1,25 @@
-function Food({fav}){// {fav} = props.fav (오브젝트에서 key값 불러오는 거랑 같지)
-  return <h1>I like {fav}</h1> 
-}
+import PropTypes from 'prop-types';
+import React from 'react';
 
-//const foodILike = []
-const friends = ["frog", "yooobssi", "solo"]
-friends.map(current => {
-  console.log(current)
-  return 0;
-});
-
-
-function App() {
-  return (
-    <div className="App">
-      <h1>Hello</h1>
-      <Food fav="kimchi"/>
+class App extends React.Component{
+  state = {
+    count : 0
+  };
+  add = () => {
+    console.log("add");
+  };
+  minus = () => {
+    console.log("minus");
+  };
+  render(){
+    return (
+    <div>
+      <h1>The numer is: {this.state.count}</h1>
+      <button>add</button>
+      <button>Minus</button>
     </div>
-  );
+    )
+  }
 }
 
 export default App;
