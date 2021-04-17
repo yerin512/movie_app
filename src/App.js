@@ -3,38 +3,22 @@ import React from 'react';
 import { unstable_concurrentAct } from 'react-dom/test-utils';
 
 class App extends React.Component{
-  constructor(props){
-    super(props);
-    console.log("hello");
+  
+state = {
+  isLoading: true,
+  movies: []
+};
+componentDidMount(){
+  setTimeout(() => {
+    this.setState({isLoading: false});
+  },6000);
+}
+
+render(){
+    const{isLoading} = this.state;
+    return <div>{isLoading ? "Loading..." : "We are ready"}</div>
   }
-  state = {
-    count : 0
-  };
-  add = () => {
-    this.setState((current)=> ({count:current.count + 1}));
-  }
-  minus = () => {
-    this.setState((current)=> ({count:current.count - 1}));
-  }
-  componentDidMount(){
-    console.log("component rendered")
-  }
-  componentDidUpdate(){
-    console.log("I just updated");
-  }
-  componentWillUnmount(){
-    console.log("Good bye Creul world")
-  }
-  render(){
-    console.log("i'm rendering")
-    return (
-    <div>
-      <h1>The numer is: {this.state.count}</h1>
-      <button onClick={this.add}>add</button>
-      <button onClick={this.minus}>Minus</button>
-    </div>
-    )
-  }
+  
 }
 
 export default App;
